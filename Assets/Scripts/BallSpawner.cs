@@ -23,7 +23,10 @@ public class BallSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (canInteract && Input.GetKeyDown(KeyCode.E))
+        {
+            Interact();
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -38,9 +41,9 @@ public class BallSpawner : MonoBehaviour
         }
     }
 
-    void OnInteract(InputValue value){
-        if(value.isPressed&&canInteract){
+    void Interact(){
             if(ball!=null){
+                Debug.Log("spawn ball");
                 Destroy(ballInstance);
                 ballExists=false;
             }
@@ -49,8 +52,6 @@ public class BallSpawner : MonoBehaviour
                 finishedTracker=0;
                 ballExists=true;
             }
-            
-        }
     }
 
     public int GetFinishPadCount(){

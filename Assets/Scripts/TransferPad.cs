@@ -38,9 +38,9 @@ public class TransferPad : MonoBehaviour
                 Rigidbody ballRb=other.GetComponent<Rigidbody>();
                 ballMovement=other.GetComponent<BallMovement>();
                 ballSpeed=ballMovement.GetBallSpeed();
-                ballRb.velocity=new Vector3(0,0,0);
+                ballRb.linearVelocity=new Vector3(0,0,0);
                 if(this.tag=="PosX"){
-                    ballRb.velocity=new Vector3(ballMovement.FinalBallSpeed()*Time.fixedDeltaTime,0,0);
+                    ballRb.linearVelocity=new Vector3(ballMovement.FinalBallSpeed()*Time.fixedDeltaTime,0,0);
                 }
         } 
         }

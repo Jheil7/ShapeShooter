@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
-using UnityEngine.InputSystem;
+
 
 public class CameraMovement : MonoBehaviour
 {
@@ -19,7 +18,7 @@ public class CameraMovement : MonoBehaviour
     {
         Cursor.lockState=CursorLockMode.Locked;
         Cursor.visible=false;
-        pauseMenu=FindObjectOfType<PauseMenu>();
+        pauseMenu=FindFirstObjectByType<PauseMenu>();
         mouseSens=1.0f;
     }
 

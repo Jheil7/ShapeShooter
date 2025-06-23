@@ -16,7 +16,7 @@ public class BallMovement : MonoBehaviour
         speedMod=1f;
         speedModCount=0;
         sphereRb=GetComponent<Rigidbody>();
-        sphereRb.velocity=new Vector3(-SetBallSpeed(speedMod)*Time.fixedDeltaTime,0,0);        
+        sphereRb.linearVelocity=new Vector3(-SetBallSpeed(speedMod)*Time.fixedDeltaTime,0,0);        
     }
 
     // Update is called once per frame
@@ -47,13 +47,13 @@ public class BallMovement : MonoBehaviour
             speedModCount++;
             speedUp=other.GetComponent<SpeedUp>();
             speedMod=speedUp.GetSpeedMod();
-            sphereRb.velocity=new Vector3(-FinalBallSpeed()*Time.fixedDeltaTime,0,0);
+            sphereRb.linearVelocity=new Vector3(-FinalBallSpeed()*Time.fixedDeltaTime,0,0);
         }
         if(other.tag=="Speed Up X"){
             speedModCount++;
             speedUp=other.GetComponent<SpeedUp>();
             speedMod=speedUp.GetSpeedMod();
-            sphereRb.velocity=new Vector3(FinalBallSpeed()*Time.fixedDeltaTime,0,0);
+            sphereRb.linearVelocity=new Vector3(FinalBallSpeed()*Time.fixedDeltaTime,0,0);
         }
     }
 }

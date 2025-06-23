@@ -27,10 +27,22 @@ public class Shooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        {
+            if (canFire)
+            {
+                if (Input.GetMouseButtonDown(0)) // Left Click
+                {
+                    Fire();
+                }
+                else if (Input.GetMouseButtonDown(1)) // Right Click
+                {
+                    AltFire();
+                }
+            }
+        }
     }
 
-    void OnFire(){
+    void Fire(){
         // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         // if(Physics.Raycast(ray, out rayHitData)){
         //     string hittag=rayHitData.collider.tag;
@@ -42,7 +54,7 @@ public class Shooter : MonoBehaviour
         
     }
 
-    void OnAltFire(){
+    void AltFire(){
         if(canFire){
             BulletBehavior(shrinkBullet,shrinkSound,shrinkParticles);
         }
